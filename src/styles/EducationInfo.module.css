@@ -1,3 +1,11 @@
-.educationInfoList {
-  list-style: none;
+.educationInfoTable {
+  border: 1px solid black;
+  width: 100%;
+}
+.second {
+  text-align: right;
+}
+.school {
+  font-size: 20px;
+  font-weight: bold;
 }

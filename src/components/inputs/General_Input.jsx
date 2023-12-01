@@ -39,6 +39,7 @@ export default function GeneralInput({userInfo, setUserInfo}){
 
             <label>Location: </label>
             <input
+                className = {styles.last}
                 type="text"
                 placeholder="City, Country"
                 value={userInfo.location}
