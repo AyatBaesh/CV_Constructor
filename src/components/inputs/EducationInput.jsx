@@ -9,21 +9,21 @@ export default function EducationInput({educationInfo, setEducationInfo, onSave}
     return(
         <div className={styles.generalDiv}>
             <h2>Education</h2>
-            <form className={styles.educationForm}>
+            <form className={styles.educationForm}>         
+            <label>Degree:</label> 
+                <input 
+                    type = "text"
+                    placeholder = "Degree/Field of study"
+                    value = {educationInfo.degree}
+                    onChange={(e) => setEducationInfo({...educationInfo, degree: e.target.value})}
+                />
+
                <label>School:</label> 
                <input 
                     type = "text"
                     placeholder = "School"
                     value = {educationInfo.school}
                     onChange={(e) => setEducationInfo({...educationInfo, school: e.target.value})}
-                />
-
-                <label>Degree:</label> 
-                <input 
-                    type = "text"
-                    placeholder = "Degree/Field of study"
-                    value = {educationInfo.degree}
-                    onChange={(e) => setEducationInfo({...educationInfo, degree: e.target.value})}
                 />
 
                 <label>Start Date:</label> 

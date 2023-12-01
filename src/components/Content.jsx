@@ -66,17 +66,16 @@ export default function Content() {
             </div>
 
             <div className={styles.infoSection}>
-                {/**/}
                 <PersonalInfo userInfo = {userInfo} />
 
                 {educations.map((education) => {
                     return <EducationInfo
                                 key = {education.key} 
                                 educationInfo={education} 
+                                educations={educations}
                                 onClick = {() => onEdit(education.key)} 
                             />
                 })}
-                {/* <EducationInfo educationInfo={educationInfo} /> */}
             </div>
         </div>
     )
