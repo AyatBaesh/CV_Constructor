@@ -1,0 +1,23 @@
+.personalInfo {
+  background-color: #0e374e;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.contacts {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  margin: auto;
+  padding: 1em;
+}
