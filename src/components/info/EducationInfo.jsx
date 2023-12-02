@@ -1,4 +1,5 @@
-import styles from '../../styles/EducationInfo.module.css'
+import styles from '../../styles/EducationInfo.module.css';
+import Button from '../Button';
 export default function EducationInfo({educationInfo, onClick, onDelete}){
     const handleDelete = (e) => {
         e.preventDefault();
@@ -24,7 +25,7 @@ export default function EducationInfo({educationInfo, onClick, onDelete}){
                             </tr>
                         </tbody>
                     </table>
-                    <button onClick = {handleDelete}>Delete</button>
+                    <Button type = 'delete' onClick = {handleDelete} />
                 </div>
 
             </>

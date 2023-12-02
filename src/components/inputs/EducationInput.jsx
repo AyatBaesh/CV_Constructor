@@ -1,5 +1,5 @@
 import styles from '../../styles/General_Input.module.css'
-
+import Button from '../Button';
 export default function EducationInput({educationInfo, setEducationInfo, onSave}){
     const handleSave = (e) => {
         e.preventDefault();
@@ -51,7 +51,7 @@ export default function EducationInput({educationInfo, setEducationInfo, onSave}
                     onChange={(e) => setEducationInfo({...educationInfo, location: e.target.value})}
                 />
                 <div className={styles.buttonsDiv}>
-                    <button onClick={handleSave}>Save</button>
+                    <Button type = 'save' onClick = {handleSave} />
                 </div>
             </form>
         </div>

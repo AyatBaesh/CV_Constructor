@@ -1,5 +1,5 @@
-import styles from '../../styles/General_Input.module.css'
-
+import styles from '../../styles/General_Input.module.css';
+import Button from '../Button';
 export default function ExperienceInput({experienceInfo, setExperienceInfo, onSave}){
     const handleSave = (e) => {
         e.preventDefault();
@@ -60,7 +60,7 @@ export default function ExperienceInput({experienceInfo, setExperienceInfo, onSa
                     onChange={(e) => setExperienceInfo({...experienceInfo, description: e.target.value})}
                 />
                 <div className={styles.buttonsDiv}>
-                    <button onClick={handleSave}>Save</button>
+                    <Button type = 'save' onClick = {handleSave} />
                 </div>
             </form>
         </div>

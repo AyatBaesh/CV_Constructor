@@ -53,11 +53,17 @@ export default function Content() {
     function onEditEdu(key){
         const editItem = educations.find((education) => education.key === key);
         setEducationInfo(editItem);
+        if(showEducation === false){
+            setShowEducation(!showEducation);
+        }
     }
 
     function onEditExp(key){
         const editItem = experiences.find((education) => education.key === key);
         setExperienceInfo(editItem);
+        if(showExperience === false){
+            setShowExperience(!showExperience);
+        }
     }
 
     function onDeleteEdu(items, deleteItem) {
@@ -114,16 +120,17 @@ export default function Content() {
         <div className={styles.content}>
 {/* constructors section */}
             <div className={styles.constructorSection}>
-                <h2 className={styles.toggler} onClick={togglePersonal}>Personal Details {showPersonal ? "▲" : "▼"}</h2>
                     <div className={`${styles.divWrapper} ${showPersonal ? styles.expanded : styles.collapsed}`}>
+                        <h2 className={styles.toggler} onClick={togglePersonal}>Personal Details {showPersonal ? "▲" : "▼"}</h2>
                         <GeneralInput
                             userInfo={userInfo}
                             setUserInfo={setUserInfo}
                         />
                     </div>
 
-                <h2 className={styles.toggler} onClick={toggleEducation}>Education {showEducation ? "▲" : "▼"}</h2>
+
                     <div className={`${styles.divWrapper} ${showEducation ? styles.expanded : styles.collapsed}`}>
+                        <h2 className={styles.toggler} onClick={toggleEducation}>Education {showEducation ? "▲" : "▼"}</h2>
                         <EducationInput
                             educationInfo={educationInfo}
                             setEducationInfo={setEducationInfo}
@@ -131,8 +138,9 @@ export default function Content() {
                         />
                     </div>
 
-                <h2 className={styles.toggler} onClick={toggleExperience}>Experience {showExperience ? "▲" : "▼"}</h2>
+                
                     <div className={`${styles.divWrapper} ${showExperience ? styles.expanded : styles.collapsed}`}>
+                        <h2 className={styles.toggler} onClick={toggleExperience}>Experience {showExperience ? "▲" : "▼"}</h2>
                         <ExperienceInput
                             experienceInfo={experienceInfo}
                             setExperienceInfo={setExperienceInfo}

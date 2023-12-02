@@ -1,9 +1,23 @@
 .infoDiv {
   display: flex;
   flex-direction: row;
+  padding: 0.5em;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 .infoTable {
   width: 100%;
+  /* border: 1px solid black; */
+}
+.infoDiv:hover {
+  box-shadow: 0px 5px 15px rgb(167, 166, 166);
+  transition: box-shadow 0.25s ease-in-out;
+}
+
+.infoDiv:active {
+  box-shadow: 0px 0px 25px rgb(255, 255, 255);
 }
 .second {
   text-align: right;

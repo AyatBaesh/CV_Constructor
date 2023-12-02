@@ -1,8 +1,9 @@
 nav {
-  background-color: rgb(230, 230, 230);
+  background-color: #0e374edc;
   padding: 1.5em;
-  margin: 0.5em;
+  color: white;
 }
+
 h1 {
   font-size: 32px;
 }
