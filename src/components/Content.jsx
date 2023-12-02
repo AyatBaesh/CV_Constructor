@@ -13,6 +13,7 @@ export default function Content() {
         tel: '',
         location: '',
     });
+
     const [educationInfo, setEducationInfo] = useState({
         school: '',
         degree: '',
@@ -22,32 +23,33 @@ export default function Content() {
     });
 
     const [educations, setEducations] = useState([])
-
+    function notEmpty(obj) {
+        return Object.values(obj).some( v => v!= '' && v != obj['key'])
+    }
+    console.log(notEmpty(educationInfo))
     function onSave() {
-        if(educationInfo.key) {
-            //if education exists already - saves updated version with same id
-            setEducations(educations.map(edu => edu.key === educationInfo.key ? educationInfo : edu))
-        }else{
-            //creates a new education with unique id
-            setEducations([...educations, {...educationInfo, key: uuidv4()}]);
+        if(notEmpty(educationInfo)){
+            if(educationInfo.key) {
+                //if education exists already - saves updated version with same id
+                setEducations(educations.map(edu => edu.key === educationInfo.key ? educationInfo : edu))
+            }else{
+                //creates a new education with unique id
+                setEducations([...educations, {...educationInfo, key: uuidv4()}]);
+            }
+            //resets input fields
+            setEducationInfo({        
+                school: '',
+                degree: '',
+                startDate: '',
+                endDate: '',
+                location: '',
+            });
         }
-        //resets input fields
-        setEducationInfo({        
-            school: '',
-            degree: '',
-            startDate: '',
-            endDate: '',
-            location: '',
-            key: uuidv4(),
-        });
     }
 
     function onEdit(key){
-        console.log('key = ' + key)
-        console.table( educations)
         const editItem = educations.find((education) => education.key === key);
-        setEducationInfo(editItem)
-        console.log(editItem)
+        setEducationInfo(editItem);
     }
 
     return(
@@ -68,11 +70,11 @@ export default function Content() {
             <div className={styles.infoSection}>
                 <PersonalInfo userInfo = {userInfo} />
 
+                {educations.length > 0 && <h1>Education</h1>}
                 {educations.map((education) => {
                     return <EducationInfo
-                                key = {education.key} 
+                                key = {uuidv4()}
                                 educationInfo={education} 
-                                educations={educations}
                                 onClick = {() => onEdit(education.key)} 
                             />
                 })}
