@@ -1,8 +1,8 @@
-import styles from '../../styles/EducationInfo.module.css'
-export default function EducationInfo({educationInfo, onClick, onDelete}){
+import styles from '../../styles/educationInfo.module.css'
+export default function ExperienceInfo({experienceInfo, onClick, onDelete}){
     const handleDelete = (e) => {
         e.preventDefault();
-        onDelete(educationInfo)
+        onDelete(experienceInfo);
     }
         return (    
             <>
@@ -10,17 +10,17 @@ export default function EducationInfo({educationInfo, onClick, onDelete}){
                     <table className={styles.infoTable} onClick = {onClick}>
                         <thead>
                             <tr>
-                                <th className={styles.header} colSpan={2}><h2>{educationInfo.degree}</h2></th>
+                                <th className={styles.header} colSpan={2}><h2>{experienceInfo.position}</h2></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td className = {styles.subHeader}>{educationInfo.school}</td>
-                                <td className={styles.second}>{educationInfo.startDate}  {educationInfo.endDate}</td>
+                                <td className = {styles.subHeader}>{experienceInfo.company}</td>
+                                <td className={styles.second}>{experienceInfo.startDate}  {experienceInfo.endDate}</td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td className={styles.second}>{educationInfo.location}</td>
+                                <td>{experienceInfo.description}</td>
+                                <td className={styles.second}>{experienceInfo.location}</td>
                             </tr>
                         </tbody>
                     </table>

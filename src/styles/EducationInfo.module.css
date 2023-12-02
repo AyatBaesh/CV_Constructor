@@ -1,11 +1,15 @@
-.educationInfoTable {
+.infoDiv {
   border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+.infoTable {
   width: 100%;
 }
 .second {
   text-align: right;
 }
-.school {
+.subHeader {
   font-size: 20px;
   font-weight: bold;
 }

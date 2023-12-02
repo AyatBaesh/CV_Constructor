@@ -52,8 +52,6 @@ export default function EducationInput({educationInfo, setEducationInfo, onSave}
                 />
                 <div className={styles.buttonsDiv}>
                     <button onClick={handleSave}>Save</button>
-
-                    <button>Delete</button>
                 </div>
             </form>
         </div>
