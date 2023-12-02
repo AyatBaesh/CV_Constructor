@@ -23,12 +23,12 @@
 .divWrapper {
   overflow: hidden;
   transition: max-height 0.25s ease-in-out;
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(255, 255, 255);
 }
 
 .divWrapper > h2 {
-  background-color: #0e374e;
-  color: white;
+  /* background-color: #0e374e;
+  color: white; */
 }
 .divWrapper > .generalDiv {
   border-radius: 5px;
@@ -40,7 +40,7 @@
 }
 
 .divWrapper.expanded {
-  max-height: 500px;
+  max-height: 50vh;
 }
 
 .toggler {

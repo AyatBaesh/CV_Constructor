@@ -1,6 +1,7 @@
 .mainPanel {
   width: 100%;
   max-width: 1400px;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
 }
