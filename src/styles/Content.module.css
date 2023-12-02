@@ -3,6 +3,18 @@
   flex-direction: row;
 }
 
+@media (max-width: 1000px) {
+  .content {
+    flex-direction: column;
+    min-width: 100vw;
+  }
+  .constructorSection {
+    min-width: 100vw;
+  }
+  .infoSection {
+    min-width: 100vw;
+  }
+}
 .constructorSection {
   width: 35%;
   /* margin: 0.5em 0; */
@@ -39,7 +51,4 @@
 }
 .infoSection > h1 {
   text-align: center;
-}
-
-button {
 }
