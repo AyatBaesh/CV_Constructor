@@ -17,6 +17,14 @@ export default function Content() {
         location: '',
     });
 
+    const [showPersonal, setShowPersonal] = useState(true);
+    const [showEducation, setShowEducation] = useState(false);
+    const [showExperience, setShowExperience] = useState(false);
+
+    const togglePersonal = () => setShowPersonal(!showPersonal);
+    const toggleEducation = () => setShowEducation(!showEducation);
+    const toggleExperience = () => setShowExperience(!showExperience);
+
     const [educationInfo, setEducationInfo] = useState({
         school: '',
         degree: '',
@@ -106,22 +114,33 @@ export default function Content() {
         <div className={styles.content}>
 {/* constructors section */}
             <div className={styles.constructorSection}>
-                <GeneralInput
-                    userInfo = {userInfo}
-                    setUserInfo = {setUserInfo}
-                />
-                <EducationInput
-                    educationInfo={educationInfo} 
-                    setEducationInfo={setEducationInfo} 
-                    onSave = {onSaveEdu}
-                    
-                />
-                <ExperienceInput
-                    experienceInfo = {experienceInfo}
-                    setExperienceInfo={setExperienceInfo}
-                    onSave = {onSaveExp}
-                />
+                <h2 className={styles.toggler} onClick={togglePersonal}>Personal Details {showPersonal ? "▲" : "▼"}</h2>
+                    <div className={`${styles.divWrapper} ${showPersonal ? styles.expanded : styles.collapsed}`}>
+                        <GeneralInput
+                            userInfo={userInfo}
+                            setUserInfo={setUserInfo}
+                        />
+                    </div>
+
+                <h2 className={styles.toggler} onClick={toggleEducation}>Education {showEducation ? "▲" : "▼"}</h2>
+                    <div className={`${styles.divWrapper} ${showEducation ? styles.expanded : styles.collapsed}`}>
+                        <EducationInput
+                            educationInfo={educationInfo}
+                            setEducationInfo={setEducationInfo}
+                            onSave={onSaveEdu}
+                        />
+                    </div>
+
+                <h2 className={styles.toggler} onClick={toggleExperience}>Experience {showExperience ? "▲" : "▼"}</h2>
+                    <div className={`${styles.divWrapper} ${showExperience ? styles.expanded : styles.collapsed}`}>
+                        <ExperienceInput
+                            experienceInfo={experienceInfo}
+                            setExperienceInfo={setExperienceInfo}
+                            onSave={onSaveExp}
+                        />
+                    </div>
             </div>
+
 {/* Info Section */}
             <div className={styles.infoSection}>
                 <PersonalInfo userInfo = {userInfo} />

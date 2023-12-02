@@ -8,7 +8,7 @@ export default function ExperienceInput({experienceInfo, setExperienceInfo, onSa
 
     return(
         <div className={styles.generalDiv}>
-            <h2>Experience</h2>
+
             <form className={styles.experienceForm}>         
             <label>Position:</label> 
                 <input 

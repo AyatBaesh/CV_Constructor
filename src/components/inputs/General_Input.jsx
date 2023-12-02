@@ -2,7 +2,6 @@ import styles from '../../styles/General_Input.module.css'
 export default function GeneralInput({userInfo, setUserInfo}){
     return(
         <div className={styles.generalDiv}>
-            <h2>Personal Details</h2>
             <form className = {styles.generalForm}>
 
             <label>First Name: </label>
