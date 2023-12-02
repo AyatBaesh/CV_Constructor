@@ -1,4 +1,4 @@
-import styles from '../../styles/educationInfo.module.css'
+import styles from '../../styles/EducationInfo.module.css'
 export default function ExperienceInfo({experienceInfo, onClick, onDelete}){
     const handleDelete = (e) => {
         e.preventDefault();
